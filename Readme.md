@@ -12,21 +12,23 @@ Avant de pouvoir exécuter l'application, assurez-vous d'avoir les éléments su
     ```
     npm install -g @angular/cli
     ```
+- MySQL : assurez-vous que MySQL est installé et démarré sur votre machine. Vous devrez vérifier que le serveur MySQL est en cours d'exécution avant de lancer l'application.
+
 
 ## Installation
 
 1. Clonez ce dépôt GitHub sur votre machine :
     ```
-    git clone https://github.com/votre-utilisateur/votre-projet.git
+    git clone https://github.com/Smail-k/Gestion_des_notes.git
     ```
 
 ## Exécution
 
-1. Démarrez le serveur Spring Boot 
+1. Démarrez le serveur Spring Boot (la base de donnée est crée automatiquement)
 
 2. Dans un terminal, accédez au répertoire du client Angular :
     ```
-    cd votre-projet/frontend
+    cd Gestion-des-notes-frontend
     ```
 
 3. Démarrez le client Angular en exécutant la commande suivante :
