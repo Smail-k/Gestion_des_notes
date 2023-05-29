@@ -1,0 +1,57 @@
+
+<h3 color="primary"> <mat-icon>person</mat-icon>
+  Edite la mobilité d'un etudiant</h3>
+
+<mat-card >
+<mat-card-content >
+  <form class="form-horizontal" name="form" [formGroup]="form" (ngSubmit)="onSubmit();onEdite()">  
+
+
+          <mat-form-field class="exemple-form" >
+              <mat-label>Type</mat-label>
+              <mat-select name="Type" required formControlName="Type">
+                <mat-option value="Erasmus">Erasmus</mat-option>
+                <mat-option value="Stage">Stage</mat-option>
+                
+              </mat-select>
+              <mat-error *ngIf="f.Type.errors?.required">
+                
+              </mat-error>
+            </mat-form-field>
+            
+              <mat-form-field class="exemple-form" >
+                <mat-label for="inputDuree">Durée  par jour</mat-label>
+                <input type="text" matInput   formControlName="Duree"  placeholder="Duree "   >
+                <mat-icon matSuffix> </mat-icon>
+                <mat-error *ngIf = "f.Duree.errors?.required">
+                    Durée est <strong> obligatoire</strong>
+                    </mat-error>
+                   
+                    <mat-icon (click)="f.Duree.setValue('')"  matSuffix style="color: #1f3a93;">clear</mat-icon>
+               </mat-form-field> 
+               <mat-form-field class="exemple-form" >
+                <mat-label for="inputdescription">description</mat-label>
+                <input type="text" matInput   formControlName="description"  placeholder="description "   >
+                <mat-icon matSuffix> </mat-icon>
+                <mat-error *ngIf = "f.description.errors?.required">
+                  description est <strong> obligatoire</strong>
+                    </mat-error>
+                   
+                    <mat-icon (click)="f.Duree.setValue('')"  matSuffix style="color: #1f3a93;">clear</mat-icon>
+               </mat-form-field> 
+
+        
+          
+
+      
+      <br><br> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+      <button mat-raised-button type="submit" color="primary" > Edite </button>
+
+
+
+
+  </form>
+
+
+</mat-card-content>
+</mat-card>

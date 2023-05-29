@@ -1,0 +1,109 @@
+<div fxLayout="row">
+
+    <div fxFlex.gt-sm="100%">
+        <mat-card>
+            <mat-card-content>
+                <mat-card-title>Information sur la mobilité</mat-card-title><br>
+<form class="form-horizontal" name="form" [formGroup]="form" (ngSubmit)="onSubmit();">  
+
+                
+                &nbsp;&nbsp;
+
+               
+
+         
+                
+                <br>
+                &nbsp;
+                <mat-form-field  style="width:15%">
+                    <mat-label>Année Universitaire</mat-label>
+                    <select matNativeControl class="custom-select" formControlName="anneeSel" (change)="ChargerPromotions()" >
+                      <option  selected aria-readonly="true"> Selectionner</option>
+                      <option *ngFor="let anneeU of annees">{{anneeU.annee}}</option>
+                    </select>
+                </mat-form-field>
+                &nbsp;&nbsp;
+               <!-- <mat-form-field  style="width:15%">
+                    <mat-label>Type</mat-label>
+                    <select matNativeControl class="custom-select" formControlName="selectedType" >
+                      <option> Stage</option>
+                      <option> Erasmus</option>
+                    </select>
+                </mat-form-field>
+                &nbsp;&nbsp;
+              -->
+                <mat-form-field style="width:15%">
+                    <mat-label>Promotions</mat-label>
+                    <select matNativeControl class="custom-select" formControlName="selectedPromotion" (change)="ListerEtudiantFiltrer()" >
+                        <option  selected aria-readonly="true"> Selectionner</option>
+                      <option  *ngFor="let promotion of promotions_Annee" >{{promotion}}</option>
+                    </select>
+                </mat-form-field>
+               
+
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <mat-form-field class="search-form-field" floatLabel="never" style="width: 20%;">
+                    <input matInput formControlName= "searchKey" placeholder="Recherche" autocomplete="off" (keyup)="applyFilter()">
+                 
+                </mat-form-field>
+                &nbsp;&nbsp;
+             
+                &nbsp;
+            
+</form>
+               
+              
+             
+
+
+    <div class="mat-elevation-z8"> 
+        <mat-table [dataSource]='dataSource' matSort>
+        <ng-container matColumnDef="numero"> 
+            <mat-header-cell *matHeaderCellDef mat-sort-header> <b> Numero </b> </mat-header-cell>
+            <mat-cell *matCellDef="let etudiant">{{etudiant.numero}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="nom" > 
+            <mat-header-cell *matHeaderCellDef mat-sort-header> <b> Nom </b> </mat-header-cell>
+            <mat-cell *matCellDef="let etudiant">{{etudiant.nom}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="prenom"> 
+            <mat-header-cell *matHeaderCellDef mat-sort-header> <b> Prenom </b></mat-header-cell>
+            <mat-cell *matCellDef="let etudiant">{{etudiant.prenom}} </mat-cell>
+        </ng-container>
+
+       <ng-container matColumnDef="Type"> 
+            <mat-header-cell *matHeaderCellDef mat-sort-header> <b> Type </b></mat-header-cell>
+           <mat-cell *matCellDef="let etudiant">{{etudiant.mobilite?.type}} </mat-cell>  
+        </ng-container>
+        <ng-container matColumnDef="Duree"> 
+            <mat-header-cell *matHeaderCellDef mat-sort-header> <b> Durée par jour </b></mat-header-cell>
+          <mat-cell *matCellDef="let etudiant">{{etudiant.mobilite?.duree}} </mat-cell>
+          </ng-container>
+          <ng-container matColumnDef="description"> 
+            <mat-header-cell *matHeaderCellDef mat-sort-header> <b> description </b></mat-header-cell>
+    <mat-cell *matCellDef="let etudiant">{{etudiant.mobilite?.description}} </mat-cell>
+        </ng-container>
+            
+        <ng-container matColumnDef="actions"> 
+            <mat-header-cell *matHeaderCellDef> <b> Actions </b></mat-header-cell>
+            <mat-cell *matCellDef="let Utilisateur"> 
+
+                <button mat-icon-button color="primary">
+                    
+                    <mat-icon  (click)="edit(Utilisateur)" aria-label="edit button icon">edit</mat-icon>
+                </button>
+            </mat-cell>
+        </ng-container>
+
+    
+        <mat-header-row *matHeaderRowDef= "displayedColumns" > </mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"> </mat-row>
+        </mat-table>  
+        <mat-paginator [pageSizeOptions]="[5,10,25,100]" [pageSize]="10" showFirstLastButtons> </mat-paginator> 
+        </div>
+    
+            </mat-card-content>
+            
+        </mat-card>
+    </div>
+</div>
