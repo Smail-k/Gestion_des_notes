@@ -115,7 +115,7 @@ public class EtudiantServiceDefault implements EtudiantService{
 				return null;
 			for (Note note : notes) {
 				System.out.println((note.getUnite()!=null && note.getUnite().getSemestre().getNom().equals(sem))+"----");
-				if(note.getUnite()!=null && note.getUnite().getSemestre().getNom().equals(sem) && note.isSituation() && note.getSession()==Session.normale) {//isSituation = validé
+				if(note.getUnite()!=null && note.getUnite().getSemestre().getNom().equals(sem) && note.getSession()==Session.normale) {//isSituation = validé
 					noteFinale+= note.getNote()*note.getUnite().getCoefficient();
 					if(totalCoefficient==1.0)
 						totalCoefficient=note.getUnite().getSemestre().getSemestreCoefficient();

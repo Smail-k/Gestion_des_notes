@@ -31,7 +31,7 @@ export class AdmissionComponent implements OnInit {
   promo?:any;
   annee?:any;
   listData! : MatTableDataSource<any>;
-  displayedColumns : string[] = ['numero' , 'nom', 'prenom','actions' ];
+  displayedColumns : string[] = ['numero' , 'nom', 'prenom' ];
   dataSource!: MatTableDataSource<Object>;
   @ViewChild(MatSort) sort! : MatSort;
   @ViewChild (MatPaginator) paginator! : MatPaginator;

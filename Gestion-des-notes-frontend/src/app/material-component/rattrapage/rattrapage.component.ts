@@ -30,7 +30,7 @@ export class RattrapageComponent implements OnInit {
   selectedSession: any;
 
   listData! : MatTableDataSource<any>;
-  displayedColumns : string[] = ['numero' , 'nom', 'prenom','actions' ];
+  displayedColumns : string[] = ['numero' , 'nom', 'prenom' ];
   dataSource!: MatTableDataSource<Object>;
   @ViewChild(MatSort) sort! : MatSort;
   @ViewChild (MatPaginator) paginator! : MatPaginator;

@@ -14,6 +14,7 @@ import { RattrapageComponent } from './rattrapage/rattrapage.component';
 import { NoteuniteComponent } from './notes/noteunite/noteunite.component';
 import { AdmissionComponent } from './admission/admission.component';
 import { GestionDesMobilitesComponent } from './gestion-des-mobilites/gestion-des-mobilites.component';
+import { NotematiereComponent } from './notes/notematiere/notematiere.component';
 
 
 export const MaterialRoutes: Routes = [
